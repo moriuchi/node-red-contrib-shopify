@@ -1,0 +1,115 @@
+<script type="text/x-red" data-help-name="shopify-orders">
+  <p>Shopify REST Admin APIを使用して、<code>Resources</code>および<code>Methods</code>で選択した以下の処理を実行します。</p>
+  <ul>
+    <li>DraftOrder
+      <ul>
+        <li>List</li>
+        <li>Get</li>
+        <li>Create</li>
+        <li>Update</li>
+        <li>Delete</li>
+      </ul>
+    </li>
+    <li>Order
+      <ul>
+        <li>List</li>
+        <li>Get</li>
+        <li>Create</li>
+        <li>Update</li>
+        <li>Delete</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>入力</h3>
+    <dl class="message-properties">
+        <dt>draftOrderId <span class="property-type">文字列</span></dt>
+        <dd>選択した処理を実行するをDraft Order IDを入力します。</dd>
+        <dt>orderId <span class="property-type">文字列</span></dt>
+        <dd>選択した処理を実行するOrder IDを入力します。</dd>
+        <dt>dataJson <span class="property-type">文字列 | オブジェクト</span></dt>
+        <dd>選択した処理を実行するデータのJSONオブジェクトを入力します。</dd>
+    </dl>
+
+  <h3>出力</h3>
+    <dl class="message-properties">
+        <dt>payload <span class="property-type">オブジェクト</span></dt>
+        <dd>選択した処理の実行結果を出力します。</dd>
+    </dl>
+
+  <h3>詳細</h3>
+  <h4>DraftOrder</h4>
+  <h5>List</h5>
+    <p>下書き注文のリストを取得します。</p>
+    <p>取得した下書き注文リストを出力します。</p>
+
+  <h5>Get</h5>
+    <p>指定した1つの下書き注文を取得します。</p>
+    <p><code>msg.draftOrderId</code>に取得する下書き注文のIDを入力します。</p>
+    <p>取得した下書き注文レコードを出力します。</p>
+
+  <h5>Create</h5>
+    <p>新しい下書き注文を作成します。</p>
+    <p><code>msg.dataJson</code>に作成するレコードのデータを入力します。</p>
+    <pre>{ "line_items": [
+  {
+    "variant_id": 447654529,
+    "quantity": 1
+  }
+]}</pre>
+    <p>作成した下書き注文レコードを出力します。</p>
+
+  <h5>Update</h5>
+    <p>指定した下書き注文のレコードを更新します。</p>
+    <p><code>msg.draftOrderId</code>に更新する下書き注文のIDを入力します。</p>
+    <p><code>msg.dataJson</code>に更新するレコードのデータを入力します。</p>
+    <pre>{"note": "draft order update test"}</pre>
+    <p>更新した下書き注文レコードを出力します。</p>
+
+  <h5>Delete</h5>
+    <p>指定した下書き注文のレコードを削除します。</p>
+    <p><code>msg.draftOrderId</code>に削除する下書き注文のIDを入力します。</p>
+    <p>削除したレコード(empty)を出力します。</p>
+
+  <h4>Order</h4>
+  <h5>List</h5>
+    <p>注文リストを取得します。</p>
+    <p>取得した注文リストを出力します。</p>
+
+  <h5>Get</h5>
+    <p>指定した1つの注文を取得します。</p>
+    <p><code>msg.orderId</code>に取得する注文のIDを入力します。</p>
+    <p>取得した注文レコードを出力します。</p>
+
+  <h5>Create</h5>
+    <p>新しい注文を作成します。</p>
+    <p><code>msg.dataJson</code>に作成するレコードのデータを入力します。</p>
+    <pre>{ "line_items":[
+    { "variant_id": 447654529, "quantity": 1 }
+  ],
+  "customer": { "id": 207119551 }
+}</pre>
+    <p>作成した注文レコードを出力します。</p>
+
+  <h5>Update</h5>
+    <p>指定した注文のレコードを更新します。</p>
+    <p><code>msg.orderId</code>に更新する注文のIDを入力します。</p>
+    <p><code>msg.dataJson</code>に更新するレコードのデータを入力します。</p>
+    <pre>{"note": "order update test"}</pre>
+    <p>更新した注文レコードを出力します。</p>
+
+  <h5>Delete</h5>
+    <p>指定した注文のレコードを削除します。</p>
+    <p><code>msg.orderId</code>に削除する注文のIDを入力します。</p>
+    <p>削除したレコード(empty)を出力します。</p>
+
+  <p></p>
+  <p><b>注</b>: 入力項目はノードの編集ダイアログでも入力可能ですが、<code>msg.xx</code>で渡された値が優先されます。</p>
+
+<h3>参照</h3>
+  <p>詳細は、Shopify REST Admin API reference を参照してください。</p>
+  <ul>
+    <li><a href="https://shopify.dev/api/admin-rest/2022-07/resources/draftorder">DraftOrder</a></li>
+    <li><a href="https://shopify.dev/api/admin-rest/2022-07/resources/order">Order</a></li>
+  </ul>
+</script>

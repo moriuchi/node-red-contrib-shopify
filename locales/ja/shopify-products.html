@@ -1,0 +1,118 @@
+<script type="text/x-red" data-help-name="shopify-products">
+  <p>Shopify REST Admin APIを使用して、<code>Resources</code>および<code>Methods</code>で選択した以下の処理を実行します。</p>
+  <ul>
+    <li>Product
+      <ul>
+        <li>List</li>
+        <li>Get</li>
+        <li>Create</li>
+        <li>Update</li>
+        <li>Delete</li>
+      </ul>
+    </li>
+    <li>Product Variant
+      <ul>
+        <li>List</li>
+        <li>Get</li>
+        <li>Create</li>
+        <li>Update</li>
+        <li>Delete</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>入力</h3>
+    <dl class="message-properties">
+        <dt>productId <span class="property-type">文字列</span></dt>
+        <dd>選択した処理を実行するをProduct IDを入力します。</dd>
+        <dt>variantId <span class="property-type">文字列</span></dt>
+        <dd>選択した処理を実行するProduct Variant IDを入力します。</dd>
+        <dt>dataJson <span class="property-type">文字列 | オブジェクト</span></dt>
+        <dd>選択した処理を実行するデータのJSONオブジェクトを入力します。</dd>
+    </dl>
+
+  <h3>出力</h3>
+    <dl class="message-properties">
+        <dt>payload <span class="property-type">オブジェクト</span></dt>
+        <dd>選択した処理の実行結果を出力します。</dd>
+    </dl>
+
+  <h3>詳細</h3>
+  <h4>Product</h4>
+  <h5>List</h5>
+    <p>商品のリストを取得します。</p>
+    <p>取得した商品リストを出力します。</p>
+
+  <h5>Get</h5>
+    <p>指定した1つの商品を取得します。</p>
+    <p><code>msg.productId</code>に取得する商品のIDを入力します。</p>
+    <p>取得した商品レコードを出力します。</p>
+
+  <h5>Create</h5>
+    <p>新しい商品を作成します。</p>
+    <p><code>msg.dataJson</code>に作成するレコードのデータを入力します。</p>
+    <pre>{
+  "title": "test shirt",
+  "product_type": "shirt"
+}</pre>
+    <p>作成した商品レコードを出力します。</p>
+
+  <h5>Update</h5>
+    <p>指定した商品のレコードを更新します。</p>
+    <p><code>msg.productId</code>に更新する商品のIDを入力します。</p>
+    <p><code>msg.dataJson</code>に更新するレコードのデータを入力します。</p>
+    <pre>{
+  "vendor": "testInc",
+  "tags": ["test", "shirt"]
+}</pre>
+    <p>更新した商品レコードを出力します。</p>
+
+  <h5>Delete</h5>
+    <p>指定した商品のレコードを削除します。</p>
+    <p><code>msg.productId</code>に削除する商品のIDを入力します。</p>
+    <p>削除したレコード(empty)を出力します。</p>
+
+  <h4>Product Variant</h4>
+  <h5>List</h5>
+    <p>商品バリエーションのリストを取得します。</p>
+    <p><code>msg.productId</code>にバリエーションを取得する商品のIDを入力します。</p>
+    <p>取得した商品のバリエーションリストを出力します。</p>
+
+  <h5>Get</h5>
+    <p>指定した1つの商品バリエーションを取得します。</p>
+    <p><code>msg.variantId</code>に取得する商品バリエーションのIDを入力します。</p>
+    <p>取得した商品バリエーションレコードを出力します。</p>
+
+  <h5>Create</h5>
+    <p>商品の新しいバリエーションを作成します。</p>
+    <p><code>msg.productId</code>にバリエーションを作成する商品のIDを入力します。</p>
+    <p><code>msg.dataJson</code>に作成するレコードのデータを入力します。</p>
+    <pre>{
+  "option1": "Medium",
+  "price": 500
+}</pre>
+    <p>作成した商品バリエーションレコードを出力します。</p>
+
+  <h5>Update</h5>
+    <p>指定した商品バリエーションのレコードを更新します。</p>
+    <p><code>msg.variantId</code>に更新する商品バリエーションのIDを入力します。</p>
+    <p><code>msg.dataJson</code>に更新するレコードのデータを入力します。</p>
+    <pre>{"option1": "Medium - Red"}</pre>
+    <p>更新した商品バリエーションレコードを出力します。</p>
+
+  <h5>Delete</h5>
+    <p>指定した商品バリエーションのレコードを削除します。</p>
+    <p><code>msg.productId</code>にバリエーションを削除する商品のIDを入力します。</p>
+    <p><code>msg.variantId</code>に削除する商品バリエーションのIDを入力します。</p>
+    <p>削除したレコード(empty)を出力します。</p>
+
+  <p></p>
+  <p><b>注</b>: 入力項目はノードの編集ダイアログでも入力可能ですが、<code>msg.xx</code>で渡された値が優先されます。</p>
+
+<h3>参照</h3>
+  <p>詳細は、Shopify REST Admin API reference を参照してください。</p>
+  <ul>
+    <li><a href="https://shopify.dev/api/admin-rest/2022-07/resources/product">Product</a></li>
+    <li><a href="https://shopify.dev/api/admin-rest/2022-07/resources/product-variant">Product Variant</a></li>
+  </ul>
+</script>

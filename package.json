@@ -1,0 +1,21 @@
+{
+  "name": "node-red-contrib-shopify",
+  "version": "0.1.0",
+  "description": "A collection of Node-RED nodes for Shopify Admin API / REST.",
+  "dependencies": {
+    "shopify-api-node": "^3.x.x"
+  },
+  "keywords": [
+    "node-red",
+    "Shopify"
+  ],
+  "node-red": {
+    "nodes": {
+      "shopify": "shopify.js",
+      "shopify-customers": "shopify-customers.js",
+      "shopify-products": "shopify-products.js",
+      "shopify-orders": "shopify-orders.js",
+      "shopify-inventory": "shopify-inventory.js"
+    }
+  }
+}

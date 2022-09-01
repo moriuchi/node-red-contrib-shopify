@@ -1,0 +1,22 @@
+{
+  "shopify-inventory" : {
+      "label" : {
+          "resource" : "Resources",
+          "method" : "Methods",
+          "inventoryItemId" : "inventoryItemId",
+          "locationId" : "LocationId",
+          "available" : "Available",
+          "dataJson" : "Data JSON",
+          "name" : "名前"
+      },
+      "placeholder" : {
+          "inventoryItemId" : "inventoryItemId",
+          "locationId" : "LocationId",
+          "available" : "Available",
+          "name" : "名前"
+      },
+      "tip": {
+          "ids" : "カンマで区切られたIDのリスト。"
+      }
+  }
+}
